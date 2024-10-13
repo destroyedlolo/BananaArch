@@ -94,3 +94,13 @@ and allow **alarm** to the group *wheel*.
 and allow wheel in sudo list using `visudo` by uncomment the following line
 
 `wheel ALL=(ALL:ALL) ALL`
+
+# the last but not the least
+
+## Change alarm password (and it's name)
+
+`usermod` + `/etc/passwd` modification.
+
+## change root password
+
+By default, root can't logon from ssh.
