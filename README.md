@@ -75,6 +75,22 @@ Put the card on the PI ... you can boot your Banana.
 ## Initializing pacman
 
 ```
-pacman-key --init
-pacman-key --populate archlinuxarm
+# pacman-key --init
+# pacman-key --populate archlinuxarm
 ```
+
+## Time to update the system
+
+`# pacman -Syu`
+
+## Install sudo
+
+`# pacman -S sudo`
+
+and allow **alarm** to the group *wheel*.
+
+`gpasswd -a alarm wheel`
+
+and allow wheel in sudo list using `visudo` by uncomment the following line
+
+`wheel ALL=(ALL:ALL) ALL`
