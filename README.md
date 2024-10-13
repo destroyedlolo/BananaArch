@@ -29,5 +29,52 @@ Here it's **/dev/sdb**.
 
 # Partition your SDCard
 
-Here, we are creating a single partition.
+Here, we are creating a single partition as explained [on Cubiekube install procedure](https://archlinuxarm.org/platforms/armv7/allwinner/cubieboard-2). Here the result with my 32Gb card.
 
+```
+# fdisk -l                                                        
+Disk /dev/mmcblk0: 30.23 GiB, 32462864384 bytes, 63404032 sectors               
+Units: sectors of 1 * 512 = 512 bytes                                           
+Sector size (logical/physical): 512 bytes / 512 bytes                           
+I/O size (minimum/optimal): 512 bytes / 512 bytes                               
+Disklabel type: dos                                                             
+Disk identifier: 0x0de60300                                                     
+                                                                                
+Device         Boot Start      End  Sectors  Size Id Type                       
+/dev/mmcblk0p1       2048 63404031 63401984 30.2G 83 Linux     
+```
+
+Follow steps **#3** to **#6** (creating and populating the filesystem)
+
+# install u-boot
+
+Install the spl bin file provided in this package.
+
+`dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8`
+
+# Copy boot.scr
+
+`cp boot.scr /mnt/boot/`
+
+# Finishing
+
+Unmount the SDCard :
+
+```
+# umount /mnt
+# sync
+```
+
+Put the card on the PI ... you can boot your Banana.
+
+# Securing root
+
+- Login as the default user **alarm** with the password *alarm*.
+- The default **root** password is *root*.
+
+## Initializing pacman
+
+```
+pacman-key --init
+pacman-key --populate archlinuxarm
+```
