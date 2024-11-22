@@ -1,7 +1,7 @@
-ArchLinux BananaPI support files
+ArchLinux BananaPIM1 and OrangePI+2 support files
 ---
 
-This repository contains **u-boot**  binary and boot script suitable to run **ArchARM** on a BananaPI M1.
+This repository contains **u-boot**  binary and boot script suitable to run **ArchARM** on a BananaPI M1 or a OrangePI Plus 2.
 
 The procedure is the following :
 
@@ -50,7 +50,7 @@ Follow steps **#3** to **#6** (creating and populating the filesystem)
 
 Install the spl bin file provided in this package.
 
-`dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8`
+`dd if=bPIM1-u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8`
 
 # Copy boot.scr
 
